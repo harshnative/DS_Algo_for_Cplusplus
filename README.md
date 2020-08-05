@@ -35,6 +35,8 @@ let count be a array = int count = 10;
 
 #### Note - elements index starting from 1 not 0 for simplicity , so position will always be actual index + 1 
 
+
+
 1. int traverseArray(int inputArray[] , int ArrayCount , string seperator)
 
 note - the default value if string seperator is " , "
@@ -44,6 +46,8 @@ obj.traverseArray(A , count , " ")
 
 // here the last argument is string sperator
 ```
+
+
 
 2. void insertPosValue(int inputArray[] , int &ArrayCount , int value , int position);
 
@@ -55,6 +59,8 @@ obj.insertPosValue(A , count , 5 , 4)
 // here the 5 will be inserted at the position 4 in array
 ```
 
+
+
 3. void deletePosValue(int inputArray[] , int &ArrayCount , int position);
 
 note - here the count is passed as reference as it changes after insertion process
@@ -64,6 +70,8 @@ obj.deletePosValue(A , count , 5 )
 
 // here the element at the 5th position will be deleted
 ```
+
+
 
 4. void deleteValue(int inputArray[] , int &ArrayCount , int value , bool deleteAll);
 
@@ -77,6 +85,8 @@ obj.deleteValue(A , count , 5)
 // here the elements that are equal to 5
 ```
 
+
+
 5. void reverseArray(int arr[], int count); 
 
 ```C++
@@ -84,6 +94,8 @@ obj.reverseArray(A , count)
 
 // after this the elements of the array will be reversed
 ```
+
+
 
 6. int normalSearch(int inputArray[] , int ArrayCount , int value);
 
@@ -97,6 +109,8 @@ obj.normalSearch(A , count , 5)
 // will return the index of element which is equal to five
 ```
 
+
+
 7. int binarySearch(int inputArray[] , int ArrayCount , int value);
 
 note - this returns the index of the element but with advance binary search operation
@@ -108,6 +122,8 @@ obj.binarySearch(A , count , 5)
 
 // will return the index of element which is equal to five
 ```
+
+
 
 8. void bubbleSort(int inputArray[] , int ArrayCount);
 

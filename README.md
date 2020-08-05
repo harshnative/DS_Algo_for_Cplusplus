@@ -35,7 +35,8 @@ let count be a array = int count = 10;
 
 #### Note - elements index starting from 1 not 0 for simplicity , so position will always be actual index + 1 
 
-<pre>
+<br />
+<br />
 
 1. int traverseArray(int inputArray[] , int ArrayCount , string seperator)
 
@@ -47,7 +48,8 @@ obj.traverseArray(A , count , " ")
 // here the last argument is string sperator
 ```
 
-
+<br />
+<br />
 
 2. void insertPosValue(int inputArray[] , int &ArrayCount , int value , int position);
 
@@ -59,7 +61,8 @@ obj.insertPosValue(A , count , 5 , 4)
 // here the 5 will be inserted at the position 4 in array
 ```
 
-
+<br />
+<br />
 
 3. void deletePosValue(int inputArray[] , int &ArrayCount , int position);
 
@@ -71,7 +74,8 @@ obj.deletePosValue(A , count , 5 )
 // here the element at the 5th position will be deleted
 ```
 
-
+<br />
+<br />
 
 4. void deleteValue(int inputArray[] , int &ArrayCount , int value , bool deleteAll);
 
@@ -85,7 +89,8 @@ obj.deleteValue(A , count , 5)
 // here the elements that are equal to 5
 ```
 
-
+<br />
+<br />
 
 5. void reverseArray(int arr[], int count); 
 
@@ -95,7 +100,8 @@ obj.reverseArray(A , count)
 // after this the elements of the array will be reversed
 ```
 
-
+<br />
+<br />
 
 6. int normalSearch(int inputArray[] , int ArrayCount , int value);
 
@@ -109,7 +115,8 @@ obj.normalSearch(A , count , 5)
 // will return the index of element which is equal to five
 ```
 
-
+<br />
+<br />
 
 7. int binarySearch(int inputArray[] , int ArrayCount , int value);
 
@@ -123,7 +130,8 @@ obj.binarySearch(A , count , 5)
 // will return the index of element which is equal to five
 ```
 
-
+<br />
+<br />
 
 8. void bubbleSort(int inputArray[] , int ArrayCount);
 
@@ -133,7 +141,8 @@ obj.bubbleSort(A , count , 5)
 // will sort the array in asending order with the help of bubble sort algorithm
 ```
 
-</pre>
+<br />
+<br />
 
 ### Sample Program - 
 

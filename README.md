@@ -35,7 +35,7 @@ let count be a array = int count = 10;
 
 #### Note - elements index starting from 1 not 0 for simplicity , so position will always be actual index + 1 
 
-
+<pre>
 
 1. int traverseArray(int inputArray[] , int ArrayCount , string seperator)
 
@@ -133,6 +133,7 @@ obj.bubbleSort(A , count , 5)
 // will sort the array in asending order with the help of bubble sort algorithm
 ```
 
+</pre>
 
 ### Sample Program - 
 

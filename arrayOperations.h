@@ -23,6 +23,7 @@ class Array
 		int normalSearch(int inputArray[] , int ArrayCount , int value);
 		int binarySearch(int inputArray[] , int ArrayCount , int value);
 		void bubbleSort(int inputArray[] , int ArrayCount);
+		void duplicateElementRemover_fromSortedArray(int inputArray[] , int &arrayCount); 
 };
 
 
@@ -189,6 +190,20 @@ void Array::bubbleSort(int inputArray[] , int ArrayCount)
 		if(swapStatus == false)
 		{
 			break;
+		}
+	}
+}
+
+
+// function for removing duplicate elements from the sorted array
+void Array::duplicateElementRemover_fromSortedArray(int inputArray[] , int &arrayCount)
+{
+	for(int i=0 ; i<arrayCount ; i++)
+	{
+		if((inputArray[i] == inputArray[i+1]) && (i+1 < arrayCount))
+		{
+			deletePosValue(inputArray , arrayCount , i+2);
+			i--;
 		}
 	}
 }

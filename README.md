@@ -144,93 +144,237 @@ obj.bubbleSort(A , count , 5)
 <br />
 <br />
 
+9.  void duplicateElementRemover_fromSortedArray(int inputArray[] , int &arrayCount); 
+
+For removing duplicate elements from the array
+
+note - array must be pre sorted for this to work
+  
+```C++
+obj.duplicateElementRemover_fromSortedArray(A , count)  
+
+// will remove the duplicate elements from the sorted array
+```
+
+<br />
+<br />
+
+10.  void duplicateElementRemover_fromUnshortedArray1(int inputArray[] , int &arrayCount); 
+
+For removing duplicate elements from the array from unsorted array
+
+note - this function uses less space while operating but may require more time 
+  
+```C++
+obj.duplicateElementRemover_fromUnshortedArray1(A , count)  
+
+// will remove the duplicate elements from the unsorted array without using more space
+```
+
+<br />
+<br />
+
+11.  void duplicateElementRemover_fromUnshortedArray2(int inputArray[] , int &arrayCount); 
+
+For removing duplicate elements from the array from unsorted array
+
+note - this function uses less time while operating but may require more space 
+  
+```C++
+obj.duplicateElementRemover_fromUnshortedArray2(A , count)  
+
+// will remove the duplicate elements from the unsorted array using less time
+```
+
+<br />
+<br />
+
+
+12.  bool elementPresentInArray(int inputArray[] , int arrayCount , int element);
+
+
+For checking if a value is present in array or not
+
+note - returns a bool value true or false 
+  
+```C++
+obj.elementPresentInArray(A , count , 5)  
+
+// return true if 5 is present in array else return false
+```
+
+<br />
+<br />
+
+
+
 ### Sample Program - 
 
 ```C++
 #include<iostream>
+#include<conio.h>
 #include "arrayoperations.h"
 
 using namespace std;
 
+
 //for testing purpose
 int main()
 {
-    int ArrayInput[10] = {1,2,3,4,5,6,7,8};
-    Array a;
-    
-    int count=8;
-    
-    
-    
-    cout<<"\ninitial array - \n";
+	int ArrayInput[10] = {1,2,2,2,3,3,4,5};
+	Array a;
+	
+	int count=8;
+	
+	
+	// showing initial array
+	cout<<"\ninitial array - \n";
     a.traverseArray(ArrayInput , count);
     cout<<endl<<endl;
     
+    // after inserting 10 at position 5
     cout<<"after inserting 10 at the position 5 - \n";
     a.insertPosValue(ArrayInput , count , 10 , 5);
     a.traverseArray(ArrayInput , count);
     cout<<endl<<endl;
     
+    // after deleting value at position 5 
     cout<<"after deleting value at position 5 - \n";
     a.deletePosValue(ArrayInput , count , 5);
     a.traverseArray(ArrayInput , count);
     cout<<endl<<endl;
     
+    // after deleting the value = 4   
     cout<<"after deleting value = 4 by finding it , only deleted first occurence as deleteAll is set to false - \n";
     a.deleteValue(ArrayInput , count , 4 , false);
-    a.traverseArray(ArrayInput , count);
+	a.traverseArray(ArrayInput , count);
     cout<<endl<<endl;
     
+    // after reversing the array
     cout<<"after reversing the array - \n";
     a.reverseArray(ArrayInput , count);
-    a.traverseArray(ArrayInput , count);
+	a.traverseArray(ArrayInput , count);
     cout<<endl<<endl;
     
+    // after sreaching for value 5 after using normal search
     cout<<"searching value = 5 using normal search - \n";
     cout<<a.normalSearch(ArrayInput , count , 5);
     cout<<endl<<endl;
     
-    cout<<"searching value = 5 using binary search - \n";
-    cout<<a.binarySearch(ArrayInput , count , 5);
+    // after searching for value 5 using binary search
+    cout<<"searching value = 1 using binary search - \n";
+    cout<<a.binarySearch(ArrayInput , count , 1);
     cout<<endl<<endl;
     
+
+    // array after sorting it using bubble sort
     cout<<"sorting array using bubble sort - \n";
     a.bubbleSort(ArrayInput , count);
-    a.traverseArray(ArrayInput , count);
-    cout<<endl;
-    
-    return 0;
+	a.traverseArray(ArrayInput , count);
+    cout<<endl<<endl;
+
+
+    // new array for duplicate element function
+    int ArrayInput2[10] = {1,2,2,2,3,3,4,5};
+    count=8;
+
+    // showing the new array
+    cout<<"new array - \n";
+    a.traverseArray(ArrayInput2 , count);
+    cout<<endl<<endl;
+
+    // array after removing duplicate elements
+    cout<<"array after removing duplicate elements - \n";
+    a.duplicateElementRemover_fromSortedArray(ArrayInput2 , count);
+    a.traverseArray(ArrayInput2 , count);
+    cout<<endl<<endl;
+
+    // new array for duplicate element function 2
+    int ArrayInput3[10] = {1,2,2,2,3,3,4,5};
+    count=8;
+
+    // showing the new array
+    cout<<"new array - \n";
+    a.traverseArray(ArrayInput3 , count);
+    cout<<endl<<endl;
+
+    // array after removing duplicate elements
+    cout<<"array after removing duplicate elements using function 2 - \n";
+    a.duplicateElementRemover_fromUnshortedArray1(ArrayInput3 , count);
+    a.traverseArray(ArrayInput3 , count);
+    cout<<endl<<endl;
+
+    // new array for duplicate element function 2
+    int ArrayInput4[10] = {1,2,2,2,3,3,4,5};
+    count=8;
+
+    // showing the new array
+    cout<<"new array - \n";
+    a.traverseArray(ArrayInput4 , count);
+    cout<<endl<<endl;
+
+    // array after removing duplicate elements
+    cout<<"array after removing duplicate elements using function 3 - \n";
+    a.duplicateElementRemover_fromUnshortedArray2(ArrayInput4 , count);
+    a.traverseArray(ArrayInput4 , count);
+    cout<<endl<<endl;
+
+
+    // press enter to continue 
+    getch();
+	return 0;
 }
 
-
-// output - 
-
-// initial array -
-// 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8
-
-// after inserting 10 at the position 5 -
-// 1 , 2 , 3 , 4 , 10 , 5 , 6 , 7 , 8
-
-// after deleting value at position 5 -
-// 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8
-
-// after deleting value = 4 by finding it , only deleted first occurence as deleteAll is set to false -
-// 1 , 2 , 3 , 5 , 6 , 7 , 8
-
-// after reversing the array -
-// 8 , 7 , 6 , 5 , 3 , 2 , 1
-
-// searching value = 5 using normal search -
-// 4
-
-// searching value = 5 using binary search -
-// 4
-
-// sorting array using bubble sort -
-// 1 , 2 , 3 , 5 , 6 , 7 , 8
 ```
+
+### Ouput of above program - 
+
+```
+initial array -
+1 , 2 , 2 , 2 , 3 , 3 , 4 , 5
+
+after inserting 10 at the position 5 - 
+1 , 2 , 2 , 2 , 10 , 3 , 3 , 4 , 5     
+
+after deleting value at position 5 -
+1 , 2 , 2 , 2 , 3 , 3 , 4 , 5
+
+after deleting value = 4 by finding it , only deleted first occurence as deleteAll is set to false -
+1 , 2 , 2 , 2 , 3 , 3 , 5
+
+after reversing the array -
+5 , 3 , 3 , 2 , 2 , 2 , 1
+
+searching value = 5 using normal search -
+1
+
+searching value = 1 using binary search - 
+7
+
+sorting array using bubble sort -
+1 , 2 , 2 , 2 , 3 , 3 , 5
+
+new array -
+1 , 2 , 2 , 2 , 3 , 3 , 4 , 5
+
+array after removing duplicate elements -
+1 , 2 , 3 , 4 , 5
+
+new array -
+1 , 2 , 2 , 2 , 3 , 3 , 4 , 5
+
+array after removing duplicate elements using function 2 -
+1 , 2 , 3 , 4 , 5
+
+new array -
+1 , 2 , 2 , 2 , 3 , 3 , 4 , 5
+
+array after removing duplicate elements using function 3 -
+1 , 2 , 3 , 4 , 5
+```
+
 
 # Licensing - 
 This code is licensed under GPL 3.0 , which means you can use this code in any of your project and also modify it if needed.
 
-But it is recommended that you contribute some of the extra features to the community as well :)
+But it is recommended that you contribute some of the extra features to the community as well (^_^)

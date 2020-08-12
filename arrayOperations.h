@@ -24,6 +24,10 @@ class Array
 		int binarySearch(int inputArray[] , int ArrayCount , int value);
 		void bubbleSort(int inputArray[] , int ArrayCount);
 		void duplicateElementRemover_fromSortedArray(int inputArray[] , int &arrayCount); 
+		void duplicateElementRemover_fromUnshortedArray1(int inputArray[] , int &arrayCount);
+		void duplicateElementRemover_fromUnshortedArray2(int inputArray[] , int &arrayCount);
+		bool elementPresentInArray(int inputArray[] , int arrayCount , int element);
+
 };
 
 
@@ -145,7 +149,19 @@ int Array::binarySearch(int inputArray[] , int ArrayCount , int value)
 			
 	low = 0;
 	high = ArrayCount - 1;
-	while(low<=high)
+
+	if(inputArray[0] == value)
+	{
+		return 1;
+	}
+	else
+	if(inputArray[ArrayCount-1] == value)
+	{
+		return ArrayCount;
+	}
+	else
+	{
+			while(low<=high)
 	{
 		mid = (low + high)/2;
 		if(value == inputArray[mid])
@@ -162,6 +178,11 @@ int Array::binarySearch(int inputArray[] , int ArrayCount , int value)
 			low = mid + 1;
 		}
 	}
+	}
+	
+	
+
+
 	return 0;
 }
 		
@@ -208,5 +229,52 @@ void Array::duplicateElementRemover_fromSortedArray(int inputArray[] , int &arra
 	}
 }
 
+// function for removing duplicate elements from the unsorted array without using much extra space
+void Array::duplicateElementRemover_fromUnshortedArray1(int inputArray[] , int &arrayCount)
+{
+	int temp = 0;
+
+	for(int i=0 ; i<arrayCount ; i++)
+	{
+		temp = inputArray[i];
+		deleteValue(inputArray , arrayCount , inputArray[i]);
+		insertPosValue(inputArray , arrayCount , temp , i+1);
+	}
+}
+
+bool Array::elementPresentInArray(int inputArray[] , int arrayCount , int element)
+{
+	for(int i=0 ; i<arrayCount ; i++)
+	{
+		if(element == inputArray[i])
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
+// function for removing duplicate elements from the unsorted array with using extra space but less time complexity
+void Array::duplicateElementRemover_fromUnshortedArray2(int inputArray[] , int &arrayCount)
+{
+	int *p = new int[arrayCount];
+	int tempArrayCount = 0;
+
+	for(int i=0 ; i<arrayCount ; i++)
+	{
+		if(elementPresentInArray(p , tempArrayCount , inputArray[i]) == false)
+		{
+			insertPosValue(p , tempArrayCount , inputArray[i] , tempArrayCount+1);
+		}
+	}
+
+	for(int i=0 ; i<tempArrayCount ; i++)
+	{
+		inputArray[i] = p[i];
+	}
+
+	arrayCount = tempArrayCount;
+
+}
 
 #endif

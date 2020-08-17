@@ -24,6 +24,39 @@ void forMatrixClass_saddlePoint()
 }
 
 
+void forMatrixClass_spiralmatrix()
+{
+    vector <vector <int>> array;
+
+    Matrix m;
+    
+    cout<<"input the 4 by 4 matrix"<<endl;
+    array = m.input2dArray(4 , 4);
+
+    cout<<"\n initial Array = "<<endl;
+    m.printMatrix(array);
+
+    cout<<"\n spiral form = "<<endl;
+    m.printMatrixInSpiralForm(array);
+}
+
+
+void forMatrixClass_spiralmatrix_anticlock()
+{
+    vector <vector <int>> array;
+
+    Matrix m;
+    
+    cout<<"input the 4 by 4 matrix"<<endl;
+    array = m.input2dArray(4 , 4);
+
+    cout<<"\n initial Array = "<<endl;
+    m.printMatrix(array);
+
+    cout<<"\n spiral form = "<<endl;
+    m.printMatrixInSpiralForm(array , " " , false);
+}
+
 void forMatrixClass_tarnsposeMatrix()
 {
     vector <vector <int>> array;
@@ -221,6 +254,6 @@ void forSpecialMatrixClass_triangularMatrixUpper()
 //for testing purpose
 int main()
 {
-    forMatrixClass_saddlePoint();
+    forMatrixClass_spiralmatrix_anticlock();
     return 0;
 }

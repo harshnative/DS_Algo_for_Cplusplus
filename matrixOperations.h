@@ -244,7 +244,7 @@ class Matrix
 		}
 
 
-		int saddlePointOfMatrix(vector <vector <int>> &v)
+		int saddlePointOfMatrix(vector <vector <int>> v)
 		{
 			for(int i=0 ; i<v.size() ; i++)
 			{
@@ -279,6 +279,133 @@ class Matrix
 			}
 			throw "no SaddlePoint found";
 		}
+
+		void printMatrixInSpiralForm(vector <vector<int>> a , string sep = " " , bool clockWise = true)
+		{ 
+
+			int m , n;
+
+			m = a.size();
+			n = a[0].size();
+		
+			// t - starting row index  
+			// b - ending row index  
+			// l - starting column index  
+			// r - ending column index  
+			
+
+			int i, k = 0, l = 0; 
+  
+			/* k - starting row index  
+				m - ending row index  
+				l - starting column index  
+				n - ending column index  
+			*/
+  
+			if(clockWise)
+			{
+
+				while (k < m && l < n) 
+				{ 
+					/* Print the first row from 
+						the remaining rows */
+					for (i = l; i < n; ++i) { 
+						cout << a[k][i] <<sep; 
+					} 
+					k++; 
+			
+					/* Print the last column  
+					from the remaining columns */
+					for (i = k; i < m; ++i) { 
+						cout << a[i][n - 1] <<sep; 
+					} 
+					n--; 
+			
+					/* Print the last row from  
+							the remaining rows */
+					if (k < m) { 
+						for (i = n - 1; i >= l; --i) { 
+							cout << a[m - 1][i] <<sep; 
+						} 
+						m--; 
+					} 
+			
+					/* Print the first column from 
+							the remaining columns */
+					if (l < n) { 
+						for (i = m - 1; i >= k; --i) { 
+							cout << a[i][l] <<sep; 
+						} 
+						l++; 
+					} 
+				} 
+			} 
+			else
+			{
+				int cnt = 0; 
+			
+				int total = m * n; 
+			
+				while (k < m && l < n)  
+				{ 
+					if (cnt == total) 
+						break; 
+			
+					// Print the first column  
+					// from the remaining columns 
+					for (i = k; i < m; ++i) 
+					{ 
+						cout << a[i][l] << " "; 
+						cnt++; 
+					} 
+					l++; 
+			
+					if (cnt == total) 
+						break; 
+			
+					// Print the last row from 
+					// the remaining rows  
+					for (i = l; i < n; ++i)  
+					{ 
+						cout << a[m - 1][i] << " "; 
+						cnt++; 
+					} 
+					m--; 
+			
+					if (cnt == total) 
+						break; 
+			
+					// Print the last column  
+					// from the remaining columns  
+					if (k < m)  
+					{ 
+						for (i = m - 1; i >= k; --i)  
+						{ 
+							cout << a[i][n - 1] << " "; 
+							cnt++; 
+						} 
+						n--; 
+					} 
+			
+					if (cnt == total) 
+						break; 
+			
+					// Print the first row  
+					// from the remaining rows  
+					if (l < n)  
+					{ 
+						for (i = n - 1; i >= l; --i)  
+						{ 
+							cout << a[k][i] << " "; 
+							cnt++; 
+						} 
+						k++; 
+					} 
+				} 
+			}
+			
+		}
+
 };
 
 

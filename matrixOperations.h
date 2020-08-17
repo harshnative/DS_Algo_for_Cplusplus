@@ -37,7 +37,114 @@ class Matrix
 			return toReturn;
 		}
 
+		// function to increase the size of mat to desired row and col by inserting value provided
+		// matrix is passed by reference here
+		void increaseMatrix(vector <vector <int>> &v , int m , int n , int value = 0)
+		{
 
+			// increasing the rows
+			int vSize = v.size();
+
+			if(vSize < m)
+			{
+				int diffInRow = m - vSize;
+
+				for(int i=0 ; i<diffInRow ; i++)
+				{
+					vector <int> temp;
+					for(int j=0 ; j<n ; j++)
+					{
+						temp.push_back(value);
+					}
+					v.push_back(temp);
+					temp.clear();
+				}
+			}
+			
+			
+			// increasing the col
+			int diffInCol = m - v[0].size();
+			for(int i=0 ; i<v.size() ; i++)
+			{
+				int viSize = v[i].size();
+
+				if(viSize < n)
+				{
+					int diffInCol = m - viSize;
+					for(int j=0 ; j<diffInCol ; j++)
+					{
+						v[i].push_back(value);
+					}
+				}	
+				}
+		}
+
+		// function to multiply two matrix , numbers of rows in one mat should be equal to number of col in other mat 
+		vector <vector <int>> multiply2Matrix(vector <vector <int>> v1 , vector <vector <int>> v2)
+		{
+			vector <vector <int>> toReturn;
+
+			// calculating the bigger matrix row and col
+			int m1 , n1 , m2 , n2 ;
+
+			m1 = v1.size();
+			n1 = v1[0].size();
+
+			m2 = v2.size();
+			n2 = v2[0].size();
+
+			if(m1 != n2)
+			{
+				throw "cannot multiply this matrix";
+			}
+
+			int bigM , bigN;
+
+			if(m1 < m2)
+			{
+				bigM = m2;
+			}
+			else
+			{
+				bigM = m1;
+			}
+
+			if(n1 < n2)
+			{
+				bigN = n2;
+			}
+			else
+			{
+				bigN = n1;
+			}
+			
+			
+			// making both matrix of same size
+			Matrix m;
+			m.increaseMatrix(v1 , bigM , bigN , 0);
+			m.increaseMatrix(v2 , bigM , bigN , 0);
+
+
+			// multiplying now 
+			for(int i=0 ; i<bigM ; i++)
+			{
+				vector <int> temp;
+
+				for(int j=0 ; j<bigN ; j++)
+				{
+					int sum = 0;
+					for(int k=0 ; k<bigN ; k++)
+					{
+						sum = sum + (v1[i][k] * v2[k][j]);
+					}
+					temp.push_back(sum);
+				}
+				toReturn.push_back(temp);
+				temp.clear();
+			}
+
+			return toReturn;
+		}
 
 		// returns a vector of 2d array inputted by user
 		vector <vector <int>> input2dArray(int row , int coloumn)

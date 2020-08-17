@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void forMatrixClass()
+void forMatrixClass_tarnsposeMatrix()
 {
     vector <vector <int>> array;
 
@@ -22,6 +22,33 @@ void forMatrixClass()
     vector <vector <int>> transposedArray;
     transposedArray = m.transposeMatrix(array);
     m.printMatrix(transposedArray);
+}
+
+
+void forMatrixClass_multipleMatrix()
+{
+    vector <vector <int>> array1;
+    vector <vector <int>> array2;
+
+    Matrix m;
+    
+    cout<<"input the 2 by 3 matrix 1"<<endl;
+    array1 = m.input2dArray(2 , 3);
+
+    cout<<"input the 3 by 2 matrix 2"<<endl;
+    array2 = m.input2dArray(3 , 2);
+
+    cout<<"\n initial Array 1 = "<<endl;
+    m.printMatrix(array1);
+
+    cout<<"\n initial Array 1 = "<<endl;
+    m.printMatrix(array2);
+
+
+    cout<<"\n matrix after multiplication = "<<endl;
+    vector <vector <int>> multiplyResult;
+    multiplyResult = m.multiply2Matrix(array1 , array2);
+    m.printMatrix(multiplyResult);
 }
 
 void forSpecialMatrixClass_diagonalMatrix()
@@ -89,8 +116,8 @@ void forSpecialMatrixClass_triDiagonalMatrix()
 //for testing purpose
 int main()
 {
-    // forMatrixClass();
-    forSpecialMatrixClass_triDiagonalMatrix();
+    forMatrixClass_multipleMatrix();
+
 
     return 0;
 }

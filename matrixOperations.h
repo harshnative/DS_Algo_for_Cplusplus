@@ -79,6 +79,69 @@ class Matrix
 				}
 		}
 
+		// function to add two matrix 
+		vector <vector <int>> add2Matrix(vector <vector <int>> v1 , vector <vector <int>> v2)
+		{
+			vector <vector <int>> toReturn;
+
+			// calculating the bigger matrix row and col
+			int m1 , n1 , m2 , n2 ;
+
+			m1 = v1.size();
+			n1 = v1[0].size();
+
+			m2 = v2.size();
+			n2 = v2[0].size();
+
+			if(m1 != n2)
+			{
+				throw "cannot multiply this matrix";
+			}
+
+			int bigM , bigN;
+
+			if(m1 < m2)
+			{
+				bigM = m2;
+			}
+			else
+			{
+				bigM = m1;
+			}
+
+			if(n1 < n2)
+			{
+				bigN = n2;
+			}
+			else
+			{
+				bigN = n1;
+			}
+			
+			
+			// making both matrix of same size
+			Matrix m;
+			m.increaseMatrix(v1 , bigM , bigN , 0);
+			m.increaseMatrix(v2 , bigM , bigN , 0);
+
+
+			// adding now 
+			for(int i=0 ; i<bigM ; i++)
+			{
+				vector <int> temp;
+
+				for(int j=0 ; j<bigN ; j++)
+				{
+					temp.push_back( (v1[i][j] + v2[i][j]) );
+				}
+				toReturn.push_back(temp);
+				temp.clear();
+			}
+
+			return toReturn;
+		}
+
+
 		// function to multiply two matrix , numbers of rows in one mat should be equal to number of col in other mat 
 		vector <vector <int>> multiply2Matrix(vector <vector <int>> v1 , vector <vector <int>> v2)
 		{
@@ -178,6 +241,43 @@ class Matrix
 				}
 				cout<<endl;
 			}
+		}
+
+
+		int saddlePointOfMatrix(vector <vector <int>> &v)
+		{
+			for(int i=0 ; i<v.size() ; i++)
+			{
+				for(int j=0 ; j<v[i].size() ; j++)
+				{
+					int point = v[i][j];
+
+					bool colNo = true;
+					bool rowNo = true;
+					
+					for(int k=0 ; k<v[i].size() ; k++)
+					{
+						if(point < v[i][k])
+						{
+							colNo = false;
+						}
+					}
+
+					for(int l=0 ; l<v.size() ; l++)
+					{
+						if(point > v[l][j])
+						{
+							rowNo = false;
+						}
+					}
+
+					if(rowNo && colNo)
+					{
+						return v[i][j];
+					}
+				}
+			}
+			throw "no SaddlePoint found";
 		}
 };
 
@@ -310,6 +410,97 @@ class SpecialMatrix
 			}
 			
 
+			return toReturn;
+		}
+
+		// for triangular matrix
+		// 0 for row mapping , 1 for col mapping 
+		// set lowerTriangular = true for lower tiangular mat else make it false for upper trianglar mat
+		vector <int> triangularMatrix(vector <vector <int>> v , int mapping = 0 , int lowerTriangular = false)
+		{
+			vector<int> toReturn;
+			
+			// for lower triangular matrix
+			if(lowerTriangular)
+			{
+				if(mapping == 0)
+				{
+					for(int i=0 ; i<v.size() ; i++)
+					{
+						for(int j=0 ; j<v[i].size() ; j++)
+						{
+							if(i >= j)
+							{
+								toReturn.push_back(v[i][j]);
+							}
+						}
+					}
+				}
+				else
+				if(mapping == 1)
+				{
+					vector <vector <int>> transposed;
+					Matrix matrixObj;
+
+					transposed = matrixObj.transposeMatrix(v);
+
+					for(int i=0 ; i<transposed.size() ; i++)
+					{
+						for(int j=0 ; j<transposed[i].size() ; j++)
+						{
+							if(i <= j)
+							{
+								toReturn.push_back(transposed[i][j]);
+							}
+						}
+					}
+				}
+				else
+				{
+					throw "please pass a valid mapping to triDiagonal function";			
+				}
+			}
+
+			else
+			{
+				if(mapping == 0)
+				{
+					for(int i=0 ; i<v.size() ; i++)
+					{
+						for(int j=0 ; j<v[i].size() ; j++)
+						{
+							if(i <= j)
+							{
+								toReturn.push_back(v[i][j]);
+							}
+						}
+					}
+				}
+				else
+				if(mapping == 1)
+				{
+					vector <vector <int>> transposed;
+					Matrix matrixObj;
+
+					transposed = matrixObj.transposeMatrix(v);
+
+					for(int i=0 ; i<transposed.size() ; i++)
+					{
+						for(int j=0 ; j<transposed[i].size() ; j++)
+						{
+							if(i >= j)
+							{
+								toReturn.push_back(transposed[i][j]);
+							}
+						}
+					}
+				}
+				else
+				{
+					throw "please pass a valid mapping to triDiagonal function";			
+				}
+			}
+			
 			return toReturn;
 		}
 };

@@ -15,7 +15,7 @@ ex -
 9. remove duplicate elements from the array 
 
 
-[read full documentation here](https://github.com/harshnative/DS_Algo_for_Cplusplus/arrayOperations.md)
+[read full documentation here](https://github.com/harshnative/DS_Algo_for_Cplusplus/blob/master/arrayOperations.md)
 
 
 ### Matrix Operations header file
@@ -32,7 +32,7 @@ ex -
 8. finding saddle point
 9. reducing special matrix like diagonal , tridiagonal , triangular etc 
 
-[read full documentation here](https://github.com/harshnative/DS_Algo_for_Cplusplus/matrixOperations.md)
+[read full documentation here](https://github.com/harshnative/DS_Algo_for_Cplusplus/blob/master/matrixOperations.md)
 
 # Licensing - 
 This code is licensed under GPL 3.0 , which means you can use this code in any of your project and also modify it if needed.

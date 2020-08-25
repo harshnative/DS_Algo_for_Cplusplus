@@ -44,16 +44,16 @@ display_SinglyLinkedList(head,seperator);
 
 ## Additional methods - 
 
-#### For singly linked list
+### For singly linked list
 
 let Head be the pointer to the linked list
 
-###### Note - Position is considered like actual index + 1
+#### Note - Position is considered like actual index + 1
 
 <br />
 <br />
 
-1. ###### insert element at the starting of the singly linked list
+1. #### insert element at the starting of the singly linked list
 
 ```C++
 // function for pushing the element at the top of linked list
@@ -65,7 +65,7 @@ void push_SinglyLinkedList(node* &head_ref, int new_data)
 <br />
 
 
-2. ###### get the node pointer pointing to a certain position in singly linked list
+2. #### get the node pointer pointing to a certain position in singly linked list
 
 ```C++
 // returns the pointer to a certain position in a linked list
@@ -77,7 +77,7 @@ node* returnPointerToPos(node* head , int pos)
 <br />
 
 
-3. ###### insert element after a certain node in singly linked list
+3. #### insert element after a certain node in singly linked list
 
 ```C++
 // function for insert a element after a certain node
@@ -90,7 +90,7 @@ void insertAfterCertainNode_SinglyLinkedList(node* prevNode, int new_data)
 <br />
 
 
-4. ###### insert element at the end of the list
+4. #### insert element at the end of the list
 
 ```C++
 // function to insert a element at the last

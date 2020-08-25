@@ -124,7 +124,7 @@ void insertAfterCertainNode_SinglyLinkedList(node* prevNode, int new_data)
     prevNode->next = newNode; 
 } 
 
-// functiont to insert a element at the last
+// function to insert a element at the last
 void append_SinglyLinkedList(node* head, int data) 
 { 
     node* newNode = new node(); 

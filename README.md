@@ -34,6 +34,18 @@ ex -
 
 [read full documentation here](https://github.com/harshnative/DS_Algo_for_Cplusplus/blob/master/matrixOperations.md)
 
+
+### linked list header file
+this file contains all the ds and algo on the 2d matrix
+
+ex - 
+1. creating a singly linked list
+2. get the pointer to a certain position in a linked list
+3. inserting in a singly linked list
+4. traversing a singly list list
+
+[read full documentation here](https://github.com/harshnative/DS_Algo_for_Cplusplus/blob/master/linkedList.md)
+
 # Licensing - 
 This code is licensed under GPL 3.0 , which means you can use this code in any of your project and also modify it if needed.
 

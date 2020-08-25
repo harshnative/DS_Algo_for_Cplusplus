@@ -100,7 +100,9 @@ void push_SinglyLinkedList(node* &head_ref, int new_data)
 }  
 
 
-
+// function for insert a element after a certain node
+// pass the prevNode value
+// you can get the previous node pointer using returnPointerToPos() function 
 void insertAfterCertainNode_SinglyLinkedList(node* prevNode, int new_data) 
 { 
     // throw error if the previous node is null as if previous node will be null then it should be last node

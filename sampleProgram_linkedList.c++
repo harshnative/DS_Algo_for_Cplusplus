@@ -39,6 +39,25 @@ void singlyList()
     cout<<"\nAfter appending value = 52\n";
     append_SinglyLinkedList(pointerTo3Element , 52);  
     display_SinglyLinkedList(head); 
+
+    cout<<"\nAfter deleting value with key method = 29\n";
+    deleteWithKey_singlyLinkedList(head , 29);
+    display_SinglyLinkedList(head); 
+
+    cout<<"\nAfter deleting element at pos = 3\n";
+    deleteWithPos_singlyLinkedList(head , 3);
+    display_SinglyLinkedList(head); 
+
+    cout<<"\nlength of linked list\n";
+    int len = length_singlyLinkedList(head);
+    cout<<len; 
+
+    cout<<"\npointer to the element = 1\n";
+    cout<<returnPointerToElement(head , 1);
+
+    cout<<"\nAfter entire linked list \n";
+    deleteEntire_singlyLinkedList(head);
+    display_SinglyLinkedList(head); 
 }
 
 

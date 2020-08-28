@@ -174,6 +174,149 @@ void display_SinglyLinkedList(node* head , string seperator = " ")
 }
 
 
+
+// function to delete a node with the key
+void deleteWithKey_singlyLinkedList(node* &head, int key) 
+{ 
+    // some pointers
+    node *tmp , *previousNode;
+    tmp = head;
+
+    // if the head is the key itself then we have to make the next element of list to be head
+    if(tmp->data == key)
+    {
+        head = tmp->next;
+        free(tmp);
+        return;
+    }
+
+    // traversing the linked list till we get NULL or we found the key
+    while(tmp != NULL && tmp->data != key)
+    {
+        previousNode = tmp;
+        tmp = tmp->next;
+    }
+
+    // if the key is not found then throw error
+    if(tmp == NULL)
+    {
+        throw("deletion not possible");
+    }
+
+    // make the previous node to point to next node
+    previousNode->next = tmp->next;
+    free(tmp);
+} 
+
+
+// function to delete a linked list
+void deleteEntire_singlyLinkedList(node* &head) 
+{ 
+    // some pointers
+    node *tmp , *current;
+    current = head;
+
+
+    // traversing the linked list till we get NULL
+    while(current != NULL)
+    {
+        tmp = current->next;
+        free(current);
+        current = tmp->next;
+    }
+
+    head = NULL;
+} 
   
+
+// function to delete a node with the position
+// position is consider to be head as 1 and next element from head as two 
+void deleteWithPos_singlyLinkedList(node* &head, int pos) 
+{ 
+    // some pointers
+    node *tmp , *previousNode;
+    tmp = head;
+
+    int tmpCount = 1;
+
+    // if the head is the pos itself then we have to make the next element of list to be head
+    if(pos == 1)
+    {
+        head = tmp->next;
+        free(tmp);
+        return;
+    }
+
+    // traversing the linked list till we get NULL or we reach that position
+    while(tmp != NULL && tmpCount != pos)
+    {
+        previousNode = tmp;
+        tmp = tmp->next;
+        tmpCount++;
+    }
+
+    // if the key is not found then throw error
+    if(tmp == NULL)
+    {
+        throw("deletion not possible");
+    }
+
+    // make the previous node to point to next node
+    previousNode->next = tmp->next;
+    free(tmp);
+} 
+
+
+// function to delete a linked list
+int length_singlyLinkedList(node* &head) 
+{ 
+    // some pointers
+    node *tmp;
+
+    tmp = head;
+
+    int listCount = 0;
+
+    // traversing the linked list till we get NULL
+    while(tmp != NULL)
+    {
+        tmp = tmp->next;
+        listCount++;
+    }
+
+    return listCount;
+} 
+
+
+// function to search for an element and return the 
+// pointer will be NULL if element is not found
+node* returnPointerToElement(node* head , int element)
+{ 
+    // some pointers
+    node *tmp , *elementPointer;
+
+    tmp = head;
+    
+    int pos = 1;
+
+    // traversing the linked list till we get NULL
+    while(tmp != NULL && tmp->data == element)
+    {
+        tmp = tmp->next;
+
+        elementPointer = returnPointerToPos(head , pos);
+        pos++; 
+    }
+
+    if(tmp == NULL)
+    {
+        elementPointer = NULL;
+    }
+
+    return elementPointer;
+} 
+
+
+
 
 #endif

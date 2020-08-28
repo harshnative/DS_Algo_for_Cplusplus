@@ -267,8 +267,8 @@ void deleteWithPos_singlyLinkedList(node* &head, int pos)
 } 
 
 
-// function to delete a linked list
-int length_singlyLinkedList(node* &head) 
+// function to get the lenght of linked list
+int length_singlyLinkedList(node* head) 
 { 
     // some pointers
     node *tmp;
@@ -305,15 +305,40 @@ node* returnPointerToElement(node* head , int element)
         tmp = tmp->next;
 
         elementPointer = returnPointerToPos(head , pos);
+        return elementPointer;
+
         pos++; 
     }
 
-    if(tmp == NULL)
+    return NULL;
+} 
+
+
+// function to return to pointer to a position from the end
+// pointer will be NULL if element is not found
+// position will be actual index + 1
+node* returnPointerToPosFromLast(node* head , int posFromLast)
+{ 
+    int lenList = length_singlyLinkedList(head);
+    int pos = lenList - posFromLast;
+
+    // new node points to head of linked list
+    node *tmp;
+    tmp = head;
+
+
+    // if the list as no further node
+    while (tmp != NULL)
     {
-        elementPointer = NULL;
+        if(pos == 1)
+        {
+            return tmp;
+        }
+        pos--;
+        tmp = tmp->next;
     }
 
-    return elementPointer;
+    return NULL;
 } 
 
 

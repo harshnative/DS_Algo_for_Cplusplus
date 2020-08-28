@@ -2,6 +2,7 @@
 
 A header file that as number of pre loaded methods on linked list
 
+### Note - for the full code look into the linkedList.h file
 
 # How to import - 
 
@@ -163,6 +164,28 @@ node* returnPointerToElement(node* head , int element)
 <br />
 <br />
 
+
+10. #### get the lenght of linked list
+
+```C++
+// function to get the lenght of linked list
+int length_singlyLinkedList(node* head) 
+```
+
+<br />
+<br />
+
+11. #### get the lenght of linked list
+
+```C++
+// function to return to pointer to a position from the end
+// pointer will be NULL if element is not found
+// position will be actual index + 1
+node* returnPointerToPosFromLast(node* head , int posFromLast)
+```
+
+<br />
+<br />
 
 
 # Sample program -

@@ -2,6 +2,8 @@
 #define LINKEDLIST_H
 
 #include<iostream>
+#include<vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -342,6 +344,89 @@ node* returnPointerToPosFromLast(node* head , int posFromLast)
 } 
 
 
+// function to count the  number of occurence in a key
+int countKey_singlyLinkedList(node* head , int key) 
+{ 
+    // some pointers
+    node *tmp;
+
+    tmp = head;
+
+    int keyCount = 0;
+
+    // traversing the linked list till we get NULL
+    while(tmp != NULL)
+    {
+        if(tmp->data == key)
+        {
+            keyCount++;
+        }
+        tmp = tmp->next;
+    }
+
+    return keyCount;
+}
+
+
+
+
+// loop detector in singly linked list
+// returns a bool value
+bool loopDetector_singlyLinkedList(node* head) 
+{ 
+    // some pointers
+    vector <node*> hashTable;
+    node *tmp;
+
+    tmp = head;
+
+
+    // traversing the linked list till we get NULL
+    while(tmp != NULL)
+    {
+        if(std::count(hashTable.begin(), hashTable.end(), tmp)) // under algorithms
+        {
+            return true;
+        }
+        else
+        {
+            hashTable.push_back(tmp);
+        }
+        tmp = tmp->next;
+    }
+
+    return false;
+}
+
+
+// function to remove duplicate elements from unshorted list
+void removeDuplicateUnshorted_singlyLinkedList(node* &head)
+{
+    struct node *ptr1, *ptr2, *tmp;
+    ptr1 = head;
+ 
+    // outter loop for iteration  
+    while (ptr1 != NULL && ptr1->next != NULL)
+    {
+        ptr2 = ptr1;
+ 
+        // inner loop for deletion
+        while (ptr2->next != NULL)
+        {
+            // if the current data is found further in the list
+            if (ptr1->data == ptr2->next->data)
+            {
+                tmp = ptr2->next;
+                ptr2->next = ptr2->next->next;
+            }
+            else
+            {
+                ptr2 = ptr2->next;
+            }
+        }
+        ptr1 = ptr1->next;
+    }
+} 
 
 
 #endif

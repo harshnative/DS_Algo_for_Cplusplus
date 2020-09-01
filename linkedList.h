@@ -211,6 +211,26 @@ void deleteWithKey_singlyLinkedList(node* &head, int key)
 } 
 
 
+// function to delete all node with the key
+void deleteWithKeyAll_singlyLinkedList(node* &head, int key) 
+{ 
+
+    // traversing the linked list till we get NULL or we found the key
+    while(true)
+    {
+        try
+        {
+            deleteWithKey_singlyLinkedList(head , key);
+        }
+        catch(char const*)
+        {
+            break;
+        }
+    }
+} 
+
+
+
 // function to delete a linked list
 void deleteEntire_singlyLinkedList(node* &head) 
 { 
@@ -428,5 +448,92 @@ void removeDuplicateUnshorted_singlyLinkedList(node* &head)
     }
 } 
 
+// function to find the middle of the linked list
+// returns pointer to the middle node
+node* middle_singlyLinkedList(node* head)
+{
+    int lengthLinkedList = length_singlyLinkedList(head);
+    int middle = lengthLinkedList/2;
+
+    if(middle % 2 != 0)
+    {
+        middle = middle +1;
+    }
+
+    return returnPointerToPos(head , middle);
+}
+
+
+// function to reverse the singly linked list
+void reverse_singlyLinkedList(node* &head) 
+{ 
+    
+    node* current = head; 
+    node *prev = NULL, *next = NULL; 
+
+    while (current != NULL) { 
+        
+        next = current->next; 
+
+        current->next = prev; 
+
+        prev = current; 
+        current = next; 
+    } 
+    head = prev; 
+} 
+
+// function to return the pointer to the insertion point of two linked list 
+// returns null if their is no insertion point
+node* insertionPoint_singlyLinkedList(node* head1 , node* head2)
+{
+    while(head1 != NULL)
+    {
+        node* tmp;
+        tmp = head2;
+
+        while(tmp != NULL)
+        {
+            if(head1 == tmp)
+            {
+                return head1;
+            }
+            tmp = tmp->next;
+        }
+        head1 = head1->next;
+    }
+    return NULL;
+}
+
+
+// function to add two linked list
+node* addTwoLinkedList(node* head1 , node* head2)
+{
+    SinglyLinkedList s;
+    while (!((head1 == NULL) && (head2 == NULL)))
+    {
+        if(head1 == NULL)
+        {
+            s.addNode(head2->data);
+            head2 = head2->next;
+        }
+        else
+        if (head2 == NULL)
+        {
+           s.addNode(head1->data);
+            head1 = head1->next;
+        }
+        else
+        {
+            s.addNode(head1->data + head2->data);
+            head1 = head1->next;
+            head2 = head2->next;
+        }
+        
+        
+    }
+    
+    return s.returnHead();
+}
 
 #endif

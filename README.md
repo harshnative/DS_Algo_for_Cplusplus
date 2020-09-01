@@ -1,4 +1,4 @@
-# Pre Build Data Structures and Algo in c++
+# Data Structures and Algo in c++ (for reference and pre build algo's)
 
 ### Array Operations header file
 this file contains all the ds and algo on the d simple array

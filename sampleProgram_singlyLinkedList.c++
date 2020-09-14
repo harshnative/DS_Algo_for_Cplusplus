@@ -1,7 +1,7 @@
 #include<iostream>
 #include<conio.h>
 
-#include "linkedList.h"
+#include "singlyLinkedList.h"
 
 using namespace std;
 

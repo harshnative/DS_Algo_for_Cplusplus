@@ -6,10 +6,10 @@ A header file that as number of pre loaded methods on linked list
 
 # How to import - 
 
-Download the linkedList.h header file and paste it into your source code folder and then write this in your .cpp file
+Download the singlyLinkedList.h header file and paste it into your source code folder and then write this in your .cpp file
 
 ```C++
-#include "linkedList.h"
+#include "singlyLinkedList.h"
 ```
 
 #### Note - All Function are made with single data in mind , you have to change the struct node and add more data operations in the linkedList.h according to your use
@@ -297,7 +297,7 @@ node* addTwoLinkedList(node* head1 , node* head2)
 #include<iostream>
 #include<conio.h>
 
-#include "linkedList.h"
+#include "singlyLinkedList.h"
 
 using namespace std;
 

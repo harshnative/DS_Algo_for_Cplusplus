@@ -40,6 +40,14 @@ void testing_InsertionINList()
 
     cout<<"\nafter adding 58 at last"<<endl;
     display_CircularLinkedList(head);
+
+    cout<<"\nis this a linked list = "<<IsCircularLinkedList(head);
+
+    deletePos_circularLinkedList(head , 3);
+
+    cout<<"\nafter deleting element at pos = 3"<<endl;
+    display_CircularLinkedList(head);
+    
 }
 
 

@@ -227,4 +227,99 @@ void addToEnd_circularLinkedList(node* &head , int data)
 }
 
 
+
+// check if a linked list is circular or not
+// also returns False if the linked list is empty 
+bool IsCircularLinkedList(node* head)
+{
+    // new node points to head of linked list
+    node *tmp;
+    tmp = head;
+
+    // should run only if linked list is not NULL
+    if(tmp != NULL)
+    {
+    // loop will execute at least ones
+    do 
+    {
+        tmp = tmp->next;
+        if(tmp == NULL)
+        {
+            return false;
+        }
+
+
+    } while((tmp != head));
+
+    return true;
+    }
+
+    return false;
+}
+
+
+
+// function to delete a node in a circular linked list
+// throws a char const * error if a pos is not found
+// pos is consider from 1
+// deletes a node at that position not after that position 
+void deletePos_circularLinkedList(node* &head , int pos)
+{
+    // as we have to delete a node at that pos
+    pos--;
+
+    // if the list is empty itself
+    if(head == NULL)
+    {
+        return;
+    }
+
+    // if the pos is head
+    if(pos == 0)
+    {
+        // new node will point to head->next
+        node* tmp = new node();
+        tmp = head;
+        tmp = tmp->next;
+
+        // last node will point to new node
+        node* last = returnLastNode_circularLinkedList(head);
+        last->next = tmp;
+
+        // head will be new node
+        head = tmp;
+        return;
+    }
+
+    int count = 1;
+
+    // node to keep track
+    node* prev = new node();
+    node* current = new node();
+
+    current = head;
+    do 
+    {
+        // making the prev node to be current node
+        prev = current;
+        // making the next node to be current node
+        current = current->next;
+        
+        if(count == pos)
+        {
+            // prev will point to next node to current node
+            prev->next = current->next;
+            free(current);
+            return;
+        }
+
+
+    } while((current != head));
+
+
+    throw "pos not found";
+}
+
+
+
 #endif

@@ -1,6 +1,6 @@
 # Data Structures and Algo in c++ (for reference and pre build algo's)
 
-### Array Operations header file
+## Array Operations header file
 this file contains all the ds and algo on the d simple array
 
 ex -
@@ -18,7 +18,7 @@ ex -
 [read full documentation here](https://github.com/harshnative/DS_Algo_for_Cplusplus/blob/master/arrayOperations.md)
 
 
-### Matrix Operations header file
+## Matrix Operations header file
 this file contains all the ds and algo on the 2d matrix
 
 ex - 
@@ -35,7 +35,7 @@ ex -
 [read full documentation here](https://github.com/harshnative/DS_Algo_for_Cplusplus/blob/master/matrixOperations.md)
 
 
-### singlyLinked list header file
+## singlyLinked list header file
 this file represent the singly linked list implementation
 
 ex - 
@@ -44,9 +44,45 @@ ex -
 3. inserting in a singly linked list
 4. traversing a singly list list
 
+
 #### And many more
 
 [read full documentation here](https://github.com/harshnative/DS_Algo_for_Cplusplus/blob/master/singlyLinkedList.md)
+
+
+## Circular Linked list Header File -
+
+this file represent the circular linked list implementation
+
+ex - 
+
+1. return the last node of the circular linked list 
+2. add to a empty circular linked list
+3. add to the beginning in a circular linked list
+4. add after a certain position in linked list 
+5. add to the end of the linked list
+6. check whether a linked list is circular or note
+7. delete a node at a certain position in circular linked list
+8. get a node position of the first apperance of the key
+9. get a node after a certain pos
+10. get the lenght of linked list
+
+
+[read full documentation here](https://github.com/harshnative/DS_Algo_for_Cplusplus/blob/master/circularLinkedList.md)
+
+
+## Doubly Linked list Header File -
+
+this file represent the doubly linked list implementation
+
+ex - 
+
+1. add node at the beginning of the linked list
+2. display from head
+3. display from tail
+4. get the lenght of linked list
+
+[read full documentation here](https://github.com/harshnative/DS_Algo_for_Cplusplus/blob/master/doublyLinkedList.md)
 
 # Licensing - 
 This code is licensed under GPL 3.0 , which means you can use this code in any of your project and also modify it if needed.

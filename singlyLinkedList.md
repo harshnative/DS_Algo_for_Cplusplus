@@ -1,8 +1,8 @@
-# Linked list Header File -
+# Singly Linked list Header File -
 
-A header file that as number of pre loaded methods on linked list
+A header file that as number of pre loaded methods on singly linked list
 
-### Note - for the full code look into the linkedList.h file
+### Note - for the full code look into the singlyLinkedList.h file
 
 # How to import - 
 
@@ -12,7 +12,7 @@ Download the singlyLinkedList.h header file and paste it into your source code f
 #include "singlyLinkedList.h"
 ```
 
-#### Note - All Function are made with single data in mind , you have to change the struct node and add more data operations in the linkedList.h according to your use
+#### Note - All Function are made with single data in mind , you have to change the struct node and add more data operations in the singlyLinkedList.h according to your use
 
 <br />
 
@@ -49,7 +49,6 @@ display_SinglyLinkedList(head,seperator);
 
 ## Additional methods - 
 
-### For singly linked list
 
 let Head be the pointer to the linked list
 

@@ -385,4 +385,29 @@ node* returnNodeToAPos_circularLinkedList(node* head , int pos)
 }
 
 
+
+
+// function to find size of circular linked list
+int size_CircularLinkedList(node* head)
+{
+    // new node points to head of linked list
+    node *tmp;
+    tmp = head;
+    int size = 0;
+    // should run only if linked list is not NULL
+    if(tmp != NULL)
+    {
+    // loop will execute at least ones
+    do 
+    {
+        size++;
+        tmp = tmp->next;
+
+    } while((tmp != head));
+    }
+
+    return size;
+}
+
+
 #endif

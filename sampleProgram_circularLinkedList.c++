@@ -43,6 +43,8 @@ void circularLinkedList()
 
     cout<<"\nnode at pos = 2"<<returnNodeToAPos_circularLinkedList(head , 2);
 
+    cout<<"\n size of linked list = "<<size_CircularLinkedList(head);
+
 
 }
 

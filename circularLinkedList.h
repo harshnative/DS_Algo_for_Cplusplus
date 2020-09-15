@@ -313,13 +313,76 @@ void deletePos_circularLinkedList(node* &head , int pos)
             return;
         }
 
-
+        count++;
     } while((current != head));
-
 
     throw "pos not found";
 }
 
+
+
+
+// function to return a position of a first appearance of a key in linked list
+// position starts from one
+// returns 0 if pos is not found
+int returnNodePosToAKey_circularLinkedList(node* head , int key)
+{
+    // new node points to head of linked list
+    node *tmp;
+    tmp = head;
+    int pos = 1;
+
+    // should run only if linked list is not NULL
+    if(tmp != NULL)
+    {
+    // loop will execute at least ones
+    do 
+    {
+        if(key == tmp->data)
+        {
+            return pos;
+        }
+        tmp = tmp->next;
+
+        pos++;
+
+    } while((tmp != head));
+    }
+
+    return 0;
+}
+
+
+
+// function to return a pointer of a pos 
+// position starts from one
+// returns NULL if pos is out of scope
+node* returnNodeToAPos_circularLinkedList(node* head , int pos)
+{
+    // new node points to head of linked list
+    node *tmp;
+    tmp = head;
+    int count = 1;
+
+    // should run only if linked list is not NULL
+    if(tmp != NULL)
+    {
+    // loop will execute at least ones
+    do 
+    {
+        if(pos == count)
+        {
+            return tmp;
+        }
+        tmp = tmp->next;
+
+        count++;
+
+    } while((tmp != head));
+    }
+
+    return NULL;
+}
 
 
 #endif

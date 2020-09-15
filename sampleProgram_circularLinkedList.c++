@@ -47,7 +47,12 @@ void testing_InsertionINList()
 
     cout<<"\nafter deleting element at pos = 3"<<endl;
     display_CircularLinkedList(head);
-    
+
+    cout<<"\npos of key = 10 is "<<returnNodePosToAKey_circularLinkedList(head , 10);
+
+    cout<<"\nnode at pos = 2"<<returnNodeToAPos_circularLinkedList(head , 2);
+
+
 }
 
 

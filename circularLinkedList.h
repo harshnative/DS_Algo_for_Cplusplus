@@ -1,5 +1,5 @@
-#ifndef LINKEDLIST_H
-#define LINKEDLIST_H
+#ifndef CIRCULARLINKEDLIST_H
+#define CIRCULARLINKEDLIST_H
 
 #include<iostream>
 #include<vector>

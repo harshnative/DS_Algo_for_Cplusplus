@@ -5,17 +5,8 @@
 
 using namespace std;
 
+
 void circularLinkedList()
-{
-    CircularLinkedList cl;
-
-    node *head = cl.generateHead(10);
-
-    cout<<"initialLinkedList"<<endl;
-    display_CircularLinkedList(head);
-}
-
-void testing_InsertionINList()
 {
     node* head = NULL;
 
@@ -61,8 +52,7 @@ void testing_InsertionINList()
 
 int main()
 {
-    // circularLinkedList();
-    testing_InsertionINList();
+    circularLinkedList();
     getch();
     return 0;
 }

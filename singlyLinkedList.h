@@ -1,5 +1,5 @@
-#ifndef LINKEDLIST_H
-#define LINKEDLIST_H
+#ifndef SINGLYLINKEDLIST_H
+#define SINGLYLINKEDLIST_H
 
 #include<iostream>
 #include<vector>

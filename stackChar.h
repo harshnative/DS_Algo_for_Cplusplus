@@ -52,7 +52,7 @@ class Stacks
     }
 
 
-    int peek()
+    char peek()
     {
         return this->stack[this->top];
     }
@@ -80,7 +80,8 @@ class Stacks
         }
         else
         {
-            int toReturn = this->stack[this->top];
+            char toReturn = this->stack[this->top];
+            stack.pop_back();
             this->top = this->top + -1;
             return toReturn;
         }

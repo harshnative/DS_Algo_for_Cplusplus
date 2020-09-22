@@ -8,7 +8,7 @@ using namespace std;
 //for testing purpose
 int main()
 {
-    Stacks s;
+    StacksInt s;
     s.setMaxSize(5);
     s.push(10);
     s.push(20);

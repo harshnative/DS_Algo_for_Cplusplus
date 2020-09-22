@@ -1,3 +1,101 @@
+# Stacks  Header File -
+
+A header file that as number of pre loaded methods on circular linked list
+
+### Note - for the full code look into the stack.h file
+
+# How to import - 
+
+Download the stack.h header file and paste it into your source code folder and then write this in your .cpp file
+
+```C++
+#include "stack.h"
+```
+
+<br />
+
+
+## Getting started - 
+
+There are pre build stacks
+1. StacksInt
+2. StacksChar
+3. StacksDouble
+
+All stack are build using vector array's
+
+
+```C++
+StacksInt si;
+StacksChar sc;
+StacksDouble sd;
+```
+
+Now their are many opeartions as well like for every object
+
+1. s.push()     for pushing an element in the stack
+
+2. s.peek()     for getting the value of top element in stack
+
+3. s.isStackempty()        to check if stack is empty or not - returns bool value
+
+4. s.isStackFull()        to check if the stack is full or not
+
+5. s.setMaxSize()       to set the max size of stack - by default it is 10
+
+6. s.pop()         to remove as well as get the element on top
+
+7. s.returnVector()         retuns the pointer to the vector stack
+
+
+
+## sample program
+
+```c++
+#include<iostream>
+#include<conio.h>
+#include "stack.h"
+
+using namespace std;
+
+
+//for testing purpose
+int main()
+{
+    StacksInt s;
+    s.setMaxSize(5);
+    s.push(10);
+    s.push(20);
+    s.push(30);
+    s.push(40);
+
+    // print stack data 
+    while(!s.isStackempty()) {
+        int data = s.pop();
+        cout<<"\n"<<data;
+    }
+
+    // press enter to continue 
+    getch();
+	return 0;
+}
+
+```
+
+
+
+## Diff applications of stack
+
+1. reverseAString()     for reversing a string
+2. checkBalancedParentheses()       for checking if the parenthesis are balanced in the string of not
+3. toPostFixConvertor()     for converting the string to postfix form
+4. postfixEvaluation()      for evaluating the postfix string
+
+
+all the above application are implemented below
+
+
+```c++
 #include<iostream>
 #include<conio.h>
 #include "stack.h"
@@ -202,14 +300,14 @@ void toPostFixConvertor()
 
 void postfixEvaluation()
 {
-
+    
     // algo
     // 1) Create a stack to store operands (or values).
     // 2) Scan the given expression and do following for every scanned element.
     // …..a) If the element is a number, push it into the stack
     // …..b) If the element is a operator, pop operands for the operator from stack. Evaluate the operator and push the result back to the stack
     // 3) When the expression is ended, the number in the stack is the final answer
-    
+
     
     StacksDouble s;
     
@@ -297,4 +395,4 @@ int main()
     getch();
 	return 0;
 }
-
+```

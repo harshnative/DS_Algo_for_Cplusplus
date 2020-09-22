@@ -84,6 +84,24 @@ ex -
 
 [read full documentation here](https://github.com/harshnative/DS_Algo_for_Cplusplus/blob/master/doublyLinkedList.md)
 
+
+## Stacks Header File -
+
+this file contains the pre build stacks and its operations
+
+ex - 
+
+1. push
+2. pop
+3. peek
+4. isStackEmpty
+5. isStackFull 
+
+etc
+
+[read full documentation here](https://github.com/harshnative/DS_Algo_for_Cplusplus/blob/master/stacks.md)
+
+
 # Licensing - 
 This code is licensed under GPL 3.0 , which means you can use this code in any of your project and also modify it if needed.
 

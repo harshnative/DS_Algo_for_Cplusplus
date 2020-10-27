@@ -9,7 +9,6 @@ using namespace std;
 int main()
 {
     QueueInt s;
-    s.setMaxSize(5);
     s.enqueue(10);
     s.enqueue(20);
     s.enqueue(30);
